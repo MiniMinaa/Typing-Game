@@ -59,3 +59,18 @@ text.addEventListener("input", function(e){
         text.value = ``;
     }
 });
+function updateTime() {
+    time = time - 1;
+    if(time < 0) {
+        time = 0;
+        gameOver()
+    }   
+    timeEl.textContent = time;
+}
+let timer = setInterval(updateTime, 1000);
+
+function gameOver() {
+    endgameEl.style.display = `block`;
+}
+
+addWordToDom()
